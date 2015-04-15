@@ -2,8 +2,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       dist: {
-        src: ['src/sizzle.js', 'src/sdk.js'],
-        dest: 'plugin.js'
+        src: [
+            'lib/sizzle.js',
+            'src/intro.js',
+            'lib/fsutil.js',
+            'src/widget.js',
+            'src/price.js',
+            'src/outro.js'
+        ],
+        dest: 'flexshopper.js'
      }
     },
     insertWidgetHtml: {
@@ -11,20 +18,31 @@ module.exports = function(grunt) {
         widgetHtml: "widget-html.html"
       },
     	dist: {
-        src: 'plugin.js',
-        dest: 'plugin.js'
+        src: 'flexshopper.js',
+        dest: 'flexshopper.js'
       }
+    },
+    uglify: {
+        dist: {
+            src: 'flexshopper.js',
+            dest: 'flexshopper.js'
+        },
+        options: {
+            mangle: {
+                except: ['FS', 'FlexPrice']
+            }
+        }
     }
   });
 
 
-
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  // grunt.registerTask('default', ["concat", "insertWidgetHtml", "uglify"]);
   grunt.registerTask('default', ["concat", "insertWidgetHtml"]);
   grunt.registerMultiTask('insertWidgetHtml', "Insert the widget HTML into the final JS", function() {
     var options = this.options({
-      widgetHtml: "", 
+      widgetHtml: ""
     });
 
     this.files.forEach(function(f) {
