@@ -4,6 +4,7 @@ var Widget = function () {
     this.widgetIdPrefix = 'weekly-price-widget';
     this.popIdPrefix = 'fs-pop';
     this.baseHtml = WIDGET_HTML;
+    this.popupHtml = POPUP_HTML;
     this.html = '';
     this.uniqueString = '';
     this.widgetId = '';
@@ -36,14 +37,11 @@ Widget.prototype.init = function (container, inject) {
     }
     this.generateUniqueString();
     this.widgetId = this.widgetIdPrefix + '-' + this.uniqueString;
-    this.fsPopId = this.popIdPrefix + '-' + this.uniqueString;
-    this.html = this.baseHtml.replace(this.widgetIdPrefix, this.widgetId);
-    this.html = this.html.replace(this.popIdPrefix, this.fsPopId);
+    this.html = this.baseHtml.replace(new RegExp(this.widgetIdPrefix, 'g'), this.widgetId);
+    this.html += this.popupHtml;
 
     if (inject) {
         var node = container.parentNode;  // append widget to same parent node as price
-        console.log('inject');
-        console.log(node);
     } else {
         node = document.createElement('div');
     }
@@ -58,8 +56,6 @@ Widget.prototype.init = function (container, inject) {
     amountDisplay[0].innerHTML = weeklyPrice;
 
     domWidget = Sizzle('#' + this.widgetId, node);
-    console.log(domWidget);
-    console.log(domWidget.length);
     if (domWidget.length == 0) {
         this.html = '';
         this.widgetId = '';
