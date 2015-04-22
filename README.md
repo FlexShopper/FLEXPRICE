@@ -9,11 +9,11 @@ Place script in header:
 ```
 
 ###Required Options:
-productSelector: '.product' // Selects the product container/containers
-priceSelector: '.price' // Selects the element containing the price relative to the product container
+*productSelector: '.product' // Selects the product container/containers
+*priceSelector: '.price' // Selects the element containing the price relative to the product container
 
 ###Optional Options:
-targetSelector: '.price' // Selects the element which will be used as the target for insertion - widget is inserted as the last child of the target's parent
+*targetSelector: '.price' // Selects the element which will be used as the target for insertion - widget is inserted as the last child of the target's parent
 
 ###Configuration Examples:
 
