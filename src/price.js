@@ -2,11 +2,15 @@ var FlexPrice, completed, ready, linkCss, create, inject;
 
 var readyExecuted = false;
 var autoApply = true;
-var priceSelector   = '._FsClientPrice';
-var size = 'M';
-var debug = false;
 
-var WIDGET_HTML='';
+var productSelector;
+var priceSelector;
+var targetSelector;
+
+var size = 'auto';
+var debug = true;
+
+var WIDGET_HTML=[];
 /** WIDGET HTML **/
 var POPUP_HTML='';
 /** POPUP HTML **/
@@ -15,17 +19,26 @@ FlexPrice = function(){};
 
 /* bus logic */
 FlexPrice.prototype.load = function(options) {
+    if (options.hasOwnProperty('productSelector')) {
+        productSelector = options.productSelector;
+    }
+    
     if (options.hasOwnProperty('priceSelector')) {
         priceSelector = options.priceSelector;
     }
+    
+    if (options.hasOwnProperty('targetSelector')) {
+        targetSelector = options.targetSelector;
+    }
+    
     if (options.hasOwnProperty('autoApply')) {
         autoApply = options.autoApply;
     }
+    
     if (options.hasOwnProperty('size')) {
-        if (options.size === 'S' || options.size === 'L') {
-            size = options.size;
-        }
+        size = options.size;
     }
+    
     if (options.hasOwnProperty('debug')) {
         debug = options.debug;
     }
@@ -36,32 +49,35 @@ FlexPrice.prototype.create = function() {
         console.log('create');
     }
     var weeklyPrice;
-    var priceContainers;
+    var productContainers;
     var amountDisplay;
 
-    priceContainers = Sizzle(priceSelector);
-    if (priceContainers.length == 0) {
+    productContainers = Sizzle(productSelector);
+    if (productContainers.length == 0) {
         return '';
     }
     var widget = new Widget();
-    widget.init(priceContainers[0]);
+    widget.init(productContainers[0], size, priceSelector);
     return widget.getHtml();
 
 };
 
 var inject = function () {
-    var priceContainers = Sizzle(priceSelector);
-    var containerLength = priceContainers.length;
+    var productContainers = Sizzle(productSelector);
+    var containerLength = productContainers.length;
+    
     if (containerLength == 0) {
         return;
     }
     for (var a=0; a < containerLength; a++) {
         var widget = new Widget();
-        widget.init(priceContainers[a], true);
+        
+        widget.init(productContainers[a], size, priceSelector, targetSelector, true);
     }
 };
 
 var ready = function () {
+    
     if (debug) {
         console.log('ready');
     }
@@ -98,7 +114,8 @@ var linkCss = function () {
     css.async = true;
     css.href = ('https:' == document.location.protocol ? 'https://cdn' : 'http://cdn') + '.flexshopper.com/widget.css';
     if (debug) {
-        css.href = 'http://plugin.flexshopper.dev/widget.css'; // debug
+//        css.href = 'http://plugin.flexshopper.dev/widget.css'; // debug
+        css.href = 'http://weekly-payment-widget.flexshopper.dev/widget.css'; // debug
         console.log(css.href);
     }
     var s = document.getElementsByTagName('head')[0];

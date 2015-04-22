@@ -1,24 +1,53 @@
-
-.fs-wkly-price{border-radius:5px;border:1px solid #d3ecff;background:#e9f8ff;cursor:pointer;font-family:arial;padding:5px 10px;height:28px;position:relative;width:190px;}
+.fs-wkly-price{
+    border-radius:5px;
+    border:1px solid #d3ecff;
+    background:#e9f8ff;
+    cursor: pointer;
+    font-family: arial;
+    padding:5px 10px;
+    height:28px;
+    position:relative;
+    width:168px;
+    margin-bottom: 15px;
+    float: right;
+}
 .fs-wkly-price:hover{background:#d3ecff;}
-.fs-wkly-price .fs-price-img{float:left;padding-right:10px;padding-top:2px;}
+.fs-wkly-price .fs-price-img{float:left;padding-right:8px;padding-top:2px; margin: 0px}
 .fs-wkly-price .fs-price{float:left;border-left:1px solid #9fb6be;padding-left:10px;color:#f4862f;font:bold 18px/1 arial;}
 .fs-wkly-price .fs-price .fs-price-label{font-size:11px;font-weight:normal;display:block;}
-.fs-wkly-price .icon-q{position: absolute;right: -10px;top: -6px;font-size: 16px;font-weight: bold;font-family: arial;background-color: #2279ed;border: 1px solid #1665cf;border-radius: 20px;color: #fff;width: 18px;height: 18px;line-height: 1.2;text-align: center;}
-.fs-wkly-price .icon-link{display:block;color:#2279ed;font-size:11px;text-align:center;position:absolute;bottom:-13px;}
+.fs-wkly-price .icon-q{position: absolute;font-weight: bold;font-family: arial;background-color: #2279ed;border: 1px solid #1665cf;border-radius: 20px;color: #fff;line-height: 1.2;text-align: center;top:11px;right:7px;font-size: 12px;width: 13px;height: 13px;}
+.fs-wkly-price .icon-link{display:block;color:#2279ed;font-size:11px;text-align:center;position:absolute;bottom:-15px;width:168px;}
 .fs-wkly-price:hover .icon-link{text-decoration:underline;}
 
-.fs-badge-lg,.fs-badge-lg .icon-link{width:190px;}
-.fs-badge-lg .icon-q{right: -10px;top: 8px;}
+.fs-badge-md,.fs-badge-md .icon-link{width:195px;}
 
-.fs-badge-sm,.fs-badge-sm .icon-link{width:170px;}
-.fs-badge-sm .icon-q{top:11px;right:7px;font-size: 12px;width: 13px;height: 13px;}
+.fs-badge-sm,.fs-badge-sm .icon-link{width:146px;}
+.fs-badge-sm{padding-left:6px;padding-right:6px;}
+.fs-badge-sm .icon-q{display:none;}
+.fs-badge-sm .fs-price-img{padding-right:5px;}
+.fs-badge-sm .fs-price{padding-left:7px;}
+.fs-badge-sm .fs-price .fs-price-label{font-size:10px;}
 
-.fs-pop-wrap{background:#fff;border:5px solid #2279ed;color:#646464;font:13px/1.2 arial;width:680px;z-index:1000;position:absolute;top:10%;left:50%;margin-left:-340px;}
+.fs-badge-xs,.fs-badge-xs .icon-link{width:85px;}
+.fs-badge-xs{padding-left:6px;padding-right:6px;height:18px;}
+.fs-badge-xs .icon-q{top:6px;right:7px;font-size: 12px;width: 13px;height: 13px;}
+.fs-badge-xs .fs-price-img{padding-right:7px; display: none}
+.fs-badge-xs .fs-price{padding-left:3px;border-left:none;}
+.fs-badge-xs .fs-price .fs-price-label{font-size:10px;display:inline;}
+
+.fs-badge-txt,.fs-badge-txt .icon-link{width:136px;}
+.fs-badge-txt{padding-left:6px;padding-right:6px;}
+.fs-badge-txt .icon-q{display:none;}
+.fs-badge-txt .fs-price-txt{font:bold 13px/1 arial;float:left;padding-right:6px;padding-top:6px;}
+.fs-badge-txt .fs-price{padding-left:8px;}
+.fs-badge-txt .fs-price .fs-price-label{font-size:10px;}
+
+
+.fs-pop-wrap{background:#fff;border:5px solid #2279ed;color:#646464;font:13px/1.2 arial;width:680px;z-index:1000;position:absolute;top:10%;left:50%;margin-left:-340px}
 .fs-pop-wrap h2{color: #f68026;font: normal 20px/1.25 Arial, Helvetica,sans-serif;}
 .fs-pop-head{position:relative;}
 .fs-pop-head .fs-pop-title{color:#3c3f44;text-align:center;margin:20px 0;font:bold 36px/1 arial;}
-.fs-pop-close{display: block;height: 20px;width: 20px;position: absolute;top: 0px;right: 4px;color: #fff;font-size: 30px;z-index: 50000000;text-decoration: none;font-weight: bold;line-height: 1;}
+.fs-pop-close{display: block;height: 20px;width: 20px;position: absolute;top: 0px;right: 4px;color: #666;font-size: 30px;z-index: 50000000;text-decoration: none;font-weight: bold;line-height: 1;}
 .fs-pop-header{background:#2279ed;color:#fff;overflow:hidden;padding:10px 30px 10px 10px;}
 .fs-pop-header .fs-logo{float:left;width:45%;}
 .fs-pop-header .fs-copy{float:right;width:50%;font-size:18px;font-weight:bold;}
@@ -38,6 +67,23 @@
 .fs-pop-body .fs-right .fs-ulservice{background: url(http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_about_icon4.png) 0 5px no-repeat;}
 
 .fs-pop-wrap .fs-highlight{color:#ffcc1a;}
+.fs-pop-wrap {
+    -moz-box-shadow: 0px 0px 22px 1px #333333; 
+    -webkit-box-shadow: 0px 0px 22px 1px #333333; 
+    box-shadow: 0px 0px 22px 1px #333333; 
+    /* Alas, box-shadow is not fully supported by IE < 9 */
+}
+
+#fs-pop-overlay { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
 .lp-sec-how h3{margin:0;padding-top: 8px;font-weight: bold;font-size: 15px;}
 .lp-sec-how ol.li-steps{padding-left:0;margin-bottom:0;list-style-type:none;}
 .lp-sec-how .li-steps li{padding-left: 70px;min-height: 55px;list-style-type:none;}
@@ -63,7 +109,6 @@
     margin-top: 0;
     line-height: 1.5;}
 
-.
 .lp-sec-faq{}
 .lp-faq-q{font-size: 18px;margin-bottom: 5px;margin-top: 20px;}
 

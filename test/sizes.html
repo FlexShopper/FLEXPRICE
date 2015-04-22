@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+.fs-wkly-price{margin:20px 0;}
+</style>
+</head>
+<body>
+
+<div class="fs-wkly-price fs-badge" onClick="document.getElementById('fs-pop').style.display='block';" title="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<img class="fs-price-img" src="http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_badge_widget_nocart.png" alt="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<div class="fs-price"><span id="fs-price-amt">$17</span><span class="fs-price-label">per week</span></div>
+<span class="icon-q">?</span>
+<span class="icon-link">learn more</span>
+</div>
+
+<div class="fs-wkly-price fs-badge-sm" onClick="document.getElementById('fs-pop').style.display='block';" title="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<img class="fs-price-img" src="http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_badge_widget_nocart.png" alt="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<div class="fs-price"><span id="fs-price-amt">$17</span><span class="fs-price-label">per week</span></div>
+<span class="icon-q">?</span>
+<span class="icon-link">learn more</span>
+</div>
+
+<!--
+<div class="fs-wkly-price fs-badge-txt" onClick="document.getElementById('fs-pop').style.display='block';" title="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<span class="fs-price-txt">FlexShopper</span>
+<div class="fs-price"><span id="fs-price-amt">$17</span><span class="fs-price-label">per week</span></div>
+<span class="icon-q">?</span>
+<span class="icon-link">learn more</span>
+</div>
+
+//-->
+
+<div class="fs-wkly-price fs-badge-xs" onClick="document.getElementById('fs-pop').style.display='block';" title="Click here to learn about FlexShopper's Lease to Own Payment Option">
+<div class="fs-price"><span id="fs-price-amt">$17</span><span class="fs-price-label">per week</span></div>
+<span class="icon-q">?</span>
+<span class="icon-link">learn more</span>
+</div>
+
+<style>
+.fs-wkly-price{border-radius:5px;border:1px solid #d3ecff;background:#e9f8ff;cursor:pointer;font-family:arial;padding:5px 10px;height:28px;position:relative;width:168px;}
+.fs-wkly-price:hover{background:#d3ecff;}
+.fs-wkly-price .fs-price-img{float:left;padding-right:8px;padding-top:2px;}
+.fs-wkly-price .fs-price{float:left;border-left:1px solid #9fb6be;padding-left:10px;color:#f4862f;font:bold 18px/1 arial;}
+.fs-wkly-price .fs-price .fs-price-label{font-size:11px;font-weight:normal;display:block;}
+.fs-wkly-price .icon-q{position: absolute;font-weight: bold;font-family: arial;background-color: #2279ed;border: 1px solid #1665cf;border-radius: 20px;color: #fff;line-height: 1.2;text-align: center;top:11px;right:7px;font-size: 12px;width: 13px;height: 13px;}
+.fs-wkly-price .icon-link{display:block;color:#2279ed;font-size:11px;text-align:center;position:absolute;bottom:-13px;width:168px;}
+.fs-wkly-price:hover .icon-link{text-decoration:underline;}
+
+.fs-badge-lg,.fs-badge-lg .icon-link{width:190px;}
+.fs-badge-lg .icon-q{right: -10px;top: 8px;}
+
+.fs-badge-sm,.fs-badge-sm .icon-link{width:146px;}
+.fs-badge-sm{padding-left:6px;padding-right:6px;}
+.fs-badge-sm .icon-q{display:none;}
+.fs-badge-sm .fs-price-img{padding-right:5px;}
+.fs-badge-sm .fs-price{padding-left:7px;}
+.fs-badge-sm .fs-price .fs-price-label{font-size:10px;}
+
+.fs-badge-xs,.fs-badge-xs .icon-link{width:96px;}
+.fs-badge-xs{padding-left:6px;padding-right:6px;height:18px;}
+.fs-badge-xs .icon-q{top:6px;right:7px;font-size: 12px;width: 13px;height: 13px;}
+.fs-badge-xs .fs-price-img{padding-right:7px;}
+.fs-badge-xs .fs-price{padding-left:3px;border-left:none;}
+.fs-badge-xs .fs-price .fs-price-label{font-size:10px;display:inline;}
+
+.fs-badge-txt,.fs-badge-txt .icon-link{width:136px;}
+.fs-badge-txt{padding-left:6px;padding-right:6px;}
+.fs-badge-txt .icon-q{display:none;}
+.fs-badge-txt .fs-price-txt{font:bold 13px/1 arial;float:left;padding-right:6px;padding-top:6px;}
+.fs-badge-txt .fs-price{padding-left:8px;}
+.fs-badge-txt .fs-price .fs-price-label{font-size:10px;}
+
+
+.fs-pop-wrap{background:#fff;border:5px solid #2279ed;color:#646464;font:13px/1.2 arial;width:680px;z-index:1000;position:absolute;top:10%;left:50%;margin-left:-340px;}
+.fs-pop-wrap h2{color: #f68026;font: normal 20px/1.25 Arial, Helvetica,sans-serif;}
+.fs-pop-head{position:relative;}
+.fs-pop-head .fs-pop-title{color:#3c3f44;text-align:center;margin:20px 0;font:bold 36px/1 arial;}
+.fs-pop-close{display: block;height: 20px;width: 20px;position: absolute;top: 0px;right: 4px;color: #fff;font-size: 30px;z-index: 50000000;text-decoration: none;font-weight: bold;line-height: 1;}
+.fs-pop-header{background:#2279ed;color:#fff;overflow:hidden;padding:10px 30px 10px 10px;}
+.fs-pop-header .fs-logo{float:left;width:45%;}
+.fs-pop-header .fs-copy{float:right;width:50%;font-size:18px;font-weight:bold;}
+
+.fs-pop-body{padding:0 20px 20px;}
+.fs-pop-body .row{overflow:hidden;width:100%;}
+.fs-pop-body .fs-left{float:left;width:230px;}
+.fs-pop-body .fs-callout{text-align:center;}
+.fs-pop-body .fs-callout img{max-width:100%;height:auto;}
+.fs-pop-body .fs-right{float:right;width:360px;padding-left:20px;border-left:1px solid #d8dadd;}
+.fs-pop-body .fs-right ul{margin:0;padding:0;list-style-type:none;font-size:13px;}
+.fs-pop-body .fs-right ul strong{display:block;font-size:14px;font-weight:bold;color:#f68026;}
+.fs-pop-body .fs-right ul li{margin-bottom:10px;padding-left:60px;padding-top:5px;padding-bottom:10px;}
+.fs-pop-body .fs-right .fs-ulpayments{background: url(http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_about_icon1.png) 0 5px no-repeat;}
+.fs-pop-body .fs-right .fs-ullimit{background: url(http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_about_icon2.png) 0 5px no-repeat;}
+.fs-pop-body .fs-right .fs-ulsecure{background: url(http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_about_icon3.png) 0 5px no-repeat;}
+.fs-pop-body .fs-right .fs-ulservice{background: url(http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_about_icon4.png) 0 5px no-repeat;}
+
+.fs-pop-wrap .fs-highlight{color:#ffcc1a;}
+.lp-sec-how h3{margin:0;padding-top: 8px;font-weight: bold;font-size: 15px;}
+.lp-sec-how ol.li-steps{padding-left:0;margin-bottom:0;list-style-type:none;}
+.lp-sec-how .li-steps li{padding-left: 70px;min-height: 55px;list-style-type:none;}
+.lp-sec-how .col-3{float:left;width:245px;}
+.lp-sec-how .how-imgs{margin:5px 0 0;}
+.lp-sec-how .how-imgs .how-img-caption{display:block;font-weight:bold;}
+.li-steps .step-1{background: url('http://cdn.flexshopper.com/media/wysiwyg/cms/step-1.png') no-repeat 0 0;}
+.li-steps .step-2{background: url('http://cdn.flexshopper.com/media/wysiwyg/cms/step-2.png') no-repeat 0 0;}
+.li-steps .step-3{background: url('http://cdn.flexshopper.com/media/wysiwyg/cms/step-3.png') no-repeat 0 0;}
+.li-steps .step-4{background: url('http://cdn.flexshopper.com/media/wysiwyg/cms/step-4.png') no-repeat 0 0;}
+.li-steps .step-5{background: url('http://cdn.flexshopper.com/media/wysiwyg/cms/step-5.png') no-repeat 0 0;}
+
+.lp-highlight-bullets .well{background-color: #e9f8ff;margin:20px 0;padding:10px;overflow:hidden;border-radius:5px;}
+.lp-highlight-bullets .pull-left{float:left;width:50%;}
+.lp-highlight-bullets h3{
+background: url(http://cdn.flexshopper.com/media/wysiwyg/cms/icon-check-orange.png) 0 0 no-repeat;
+padding-left: 35px;
+min-height: 37px;
+margin: 0;
+font-size: 16px;
+font-weight: bold;
+margin-left: 5px;
+margin-top: 0;
+line-height: 1.5;}
+
+.lp-sec-faq{}
+.lp-faq-q{font-size: 18px;margin-bottom: 5px;margin-top: 20px;}
+
+hr{clear: both;border: 0;border-top: 1px solid #d8dadd;margin:17px 0;}
+
+@media (max-width: 680px) {
+	.fs-pop-wrap{width:92%;top:0;left:0;margin:10px;}
+	.fs-pop-head .fs-pop-title{font-size:20px;}
+	.fs-pop-foot .fs-copy{width:auto;}
+	.fs-pop-body .fs-right{border-left:0;padding-left:0;width:auto;margin-top:15px;}
+	.fs-pop-header .fs-logo{float:left;width:auto;}
+	.fs-pop-header .fs-copy{float:left;width:auto;}
+	.lp-sec-how .col-3{width:auto;margin-bottom:10px;}
+	.lp-highlight-bullets .pull-left{width:100%;}
+	}
+</style>
+
+<div id="fs-pop" class="fs-pop-wrap" style="display:none;">
+    <div class="fs-pop-head">
+    <div class="fs-pop-header">
+        <div class="fs-logo"><img src="http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_logo_m_white_278x50.png" alt="FlexShopper"></div>
+        <div class="fs-copy"><span class="fs-highlight">Select FlexShopper</span> as your payment option during checkout.</div>
+    </div>
+    <p class="fs-pop-title">
+    No Cash? Bad Credit? No Problem! <br>Lease to Own Your Items Today.</p>
+    <a class="fs-pop-close" href="#" onClick="document.getElementById('fs-pop').style.display='none';">&times;</a>
+    </div>
+    <div class="fs-pop-body">
+    <div class="row">
+    	<div class="fs-left">
+            <div class="fs-callout"><img src="http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_pop_leftbullets.png" alt="Qualify today"></div>
+        </div>
+        <div class="fs-right">
+        	<ul>
+                <li class="fs-ulpayments">
+                <strong>Affordable Weekly Payments</strong>
+Our transactions are lease-to-own - you get the products you want today, while paying affordable weekly payments over time.</li>
+                <li class="fs-ullimit">
+                <strong>Instant Spending Limit</strong>
+Apply online instantly with zero paperwork and receive a decision within minutes. </li>
+                <li class="fs-ulsecure">
+                <strong>Safe and Secure</strong>
+Protecting your information is our top priority. It will never be shared with anyone.</li>
+                <li class="fs-ulservice">
+                <strong>Excellent Customer Service</strong>
+Our agents are available to guide you through the entire process and answer any questions you have.</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <section class="lp-sec-how">
+    <h2>How FlexShopper Works</h2>
+    <ol class="list-unstyled li-steps row">
+    <li class="step-1 col-3">
+    <h3>Shop </h3>
+    Shop and find the product(s) you want. Check for products that have a weekly price option. 
+    </li>
+    <li class="step-2 col-3">
+    <h3>Checkout</h3>
+    Add the product to your shopping cart, and select FlexShopper as your payment method during checkout. 
+    </li>
+    <li class="step-3 col-3">
+    <h3>Apply</h3>
+    You will be temporarily redirected to FlexShopper.com. Fill out the easy, online application and get an instant spending decision. </li>
+    <li class="step-4 col-3">
+    <h3>Sign</h3>
+    Accept the simple, electronic lease agreement, and you will be redirected to our site for your order confirmation.</li>
+    </ol>
+    </section>
+    <section class="lp-highlight-bullets">
+        <div class="well">
+        <div class="pull-left"><h3>Your first payment will be the Friday after delivery!</h3></div>
+        <div class="pull-left"><h3>Make payments for one year and it's yours to keep!</h3></div>
+    </div>
+    </section>
+    <hr>
+    <section class="lp-sec-faq">
+<h2>FlexShopper FAQs</h2>
+<p class="lp-faq-q">What are the general requirements?</p>
+<p> Application Requirements: Be at least 18 years old; Earn at least $1,000 per month; Have a bank account for at least 90 days; Up to 3 NSFs. Not allowed in New Jersey, Minnesota, North Carolina and Wisconsin.</p>
+<p class="lp-faq-q">What products can I lease?</p>
+<p>Qualifying products include those priced between $49.95 and $2,500. On the product page of all qualifying products, you will see an estimated weekly price in addition to the retail price </p>
+<p class="lp-faq-q">Where can I find the weekly price?</p>
+<p>On eligible product pages, the weekly price can be found in a badge simliar to the below.<br>
+<img src="http://cdn.flexshopper.com/media/wysiwyg/cms/icon-payment-widget-flexshopper.png" alt=""></p>
+<p class="lp-faq-q">How do I checkout with FlexShopper?</p>
+<p>During checkout look for the badge below to select FlexShopper as your payment method.<br>
+<img src="http://cdn.flexshopper.com/media/wysiwyg/plugin/fs_badge_pay.png" alt=""></p>
+<p class="lp-faq-q">  Do I need to have good credit?</p>
+<p>  Having good credit is not part of our general requirements but we will utilize a variety of information from consumer reporting agencies to evaluate your approval/denial worthiness.</p>
+
+<p class="lp-faq-q">  Can I get more than one product?</p>
+<p>  Yes, you may lease any number of products up to your approved spending limit.</p>
+<p class="lp-faq-q">  What is a Lease?</p>
+<p>  A lease is a contract between a lessor (the property owner) and a lessee (the property user) for the use of property subject to stated terms and limitations for a specified period and at a specified payment.</p>
+<p class="lp-faq-q">  How does the lease work?</p>
+<p>  With a lease, you are agreeing to make weekly payments for a specific amount of time (the initial lease term) which may vary by state. If you provide us with 30 days' notice before the end of the initial lease term, make all of your required payments during the initial lease term, and return the item back to us in good condition, you have no further obligation to FlexShopper. If you do not provide us with timely notice, then the lease typically rolls over for the same period as the initial lease term; please be sure to read your lease before electronically signing for the exact terms. You can also buy the item at any time by using the Early Payment Option. Simply refer to the table in your lease to look up the Early Payment Option amount. Remember, if you don't choose the Early Payment Option, just make 52 weekly payments and you own the product.</p>
+<p class="lp-faq-q">  Can I own the product?</p>
+<p>  You can buy the item at any time by using the Early Payment Option. Simply refer to the table in your lease to look up the Early Payment Option amount. Remember, if you don't choose the Early Payment Option, just make 52 weekly payments and you own the product.</p>
+<p class="lp-faq-q">  How long is the lease?</p>
+<p>  With a lease, you are agreeing to make weekly payments for a specific amount of time (the initial lease term) which may vary by state but ranges from 89 days to 20 weeks. If you provide us with 30 days' notice before the end of the initial lease term, make all of your required payments during the initial lease term, and return the item back to us in good condition, you have no further obligation to FlexShopper. If you do not provide us with timely notice, then the lease typically rolls over for the same period as the initial lease term; please be sure to read your lease before electronically signing for the exact terms.</p>
+<p class="lp-faq-q">  What is the Cash Price?</p>
+<p>  The cash price is the amount you would have paid online or at a store to buy the item(s) or the "retail" price of the product.</p>
+<p class="lp-faq-q">  What is 90 Days Same as Cash?</p>
+<p>  If you pay the cash price plus $50 within ninety days of the Lease's effective date you will own the item(s). The cash price for the product will be disclosed on your lease agreement prior to your signing and agreeing to the terms of the lease.</p>
+<p class="lp-faq-q">  What's my payment?</p>
+<p>  Your payments will be weekly, on Fridays. The first payment will be on the first Friday after you receive your items. Your actual payment amount will be disclosed in your lease agreement prior to your signing and agreeing to the terms of the lease.</p>
+<p class="lp-faq-q">  Can I return the merchandise?</p>
+<p>  A customer may return the leased product in accordance with the terms in their Lease Agreement.</p>
+<p class="lp-faq-q">  Do you pull my credit score?</p>
+<p>  While having good credit is not a requirement for approval, as part of our application we do obtain information about you including a credit report from FactorTrust, Inc.</p>
+<p class="lp-faq-q">  Do you report to credit bureaus/can you help build my credit?</p>
+<p>  We only report to FactorTrust, Inc, which is an FCRA compliant credit reporting agency. We do not expect that your experience with us will have a significant (if any) impact on your credit score with any other credit bureau.
+</p>
+</section>
+    </div>
+</div>
+
+</body>
+</html>
