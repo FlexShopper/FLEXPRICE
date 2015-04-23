@@ -32,17 +32,13 @@
 	<!-- FlexPrice Plugin -->
         <script type="text/javascript" src="/flexshopper.js"></script>
         <script type="text/javascript">
-             var _FP = new _FlexPrice();
-             
-            _FP.load({
+             new _FlexPrice({
                 productSelector: '.sub-category-items .row'
                 ,priceSelector: '.price'
 //              ,targetSelector: '.price'
+                ,size: 'MD'
             });
         </script>
-
-	
-
 </head>
 <body>
 

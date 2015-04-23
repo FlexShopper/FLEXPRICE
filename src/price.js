@@ -1,118 +1,144 @@
-var FlexPrice, completed, ready, linkCss, create, inject;
-
-var readyExecuted = false;
-var autoApply = true;
-
-var productSelector;
-var priceSelector;
-var targetSelector;
-
-var size = 'auto';
-var debug = true;
+var FlexPrice, linkCss, debug = true;
 
 var WIDGET_HTML=[];
 /** WIDGET HTML **/
 var POPUP_HTML='';
 /** POPUP HTML **/
 
-FlexPrice = function(){};
+var proxy = function(func, context) {
+    return function(){ func.apply(context); };
+};
+
+FlexPrice = function(options){
+    
+    var self = this;
+    
+    // store the options
+    if (options !== undefined) {
+        this.load(options);
+    }
+
+    this.completedProxied = proxy(this.completed, self);
+    
+    document.addEventListener('DOMContentLoaded', this.completedProxied);
+    window.addEventListener('load', this.completedProxied);
+};
 
 /* bus logic */
 FlexPrice.prototype.load = function(options) {
+    
+    this.options = {};
+    
+    // Set defaults
+    this.options.size = 'auto';
+    this.options.autoInject = true;
+    
     if (options.hasOwnProperty('productSelector')) {
-        productSelector = options.productSelector;
+        this.options.productSelector = options.productSelector;
     }
     
     if (options.hasOwnProperty('priceSelector')) {
-        priceSelector = options.priceSelector;
+        this.options.priceSelector = options.priceSelector;
     }
     
     if (options.hasOwnProperty('targetSelector')) {
-        targetSelector = options.targetSelector;
+        this.options.targetSelector = options.targetSelector;
     }
     
-    if (options.hasOwnProperty('autoApply')) {
-        autoApply = options.autoApply;
+    if (options.hasOwnProperty('autoInject')) {
+        this.options.autoInject = options.autoInject;
     }
     
     if (options.hasOwnProperty('size')) {
-        size = options.size;
+        this.options.size = options.size;
     }
     
-    if (options.hasOwnProperty('debug')) {
-        debug = options.debug;
-    }
+    return this;
 };
 
 FlexPrice.prototype.create = function() {
     if (debug) {
         console.log('create');
     }
-    var weeklyPrice;
-    var productContainers;
-    var amountDisplay;
+    var weeklyPrice, productContainers, amountDisplay;
 
-    productContainers = Sizzle(productSelector);
+    productContainers = Sizzle(this.options.productSelector);
     if (productContainers.length == 0) {
         return '';
     }
     var widget = new Widget();
-    widget.init(productContainers[0], size, priceSelector);
-    return widget.getHtml();
-
+    
+    return widget.init(productContainers[0], this.options.priceSelector, this.options.targetSelector, false);
 };
 
-var inject = function () {
-    var productContainers = Sizzle(productSelector);
-    var containerLength = productContainers.length;
+FlexPrice.prototype.inject = function() {
+    var productContainers = Sizzle(this.options.productSelector),
+    containerLength = productContainers.length;
     
     if (containerLength == 0) {
         return;
     }
     for (var a=0; a < containerLength; a++) {
-        var widget = new Widget();
+        var widget = new Widget({
+            WIDGET_HTML: WIDGET_HTML,
+            POPUP_HTML: POPUP_HTML,
+            
+            // @todo deal with size
+            size: this.options.size
+        });
         
-        widget.init(productContainers[a], size, priceSelector, targetSelector, true);
+        widget.init(productContainers[a], this.options.priceSelector, this.options.targetSelector, true);
     }
 };
 
-var ready = function () {
+FlexPrice.prototype.ready = function () {
     
     if (debug) {
         console.log('ready');
     }
-    if (readyExecuted) {
+    
+    if (this.readyExecuted) {
         return;
     }
-    readyExecuted = true;
-    linkCss();
-    if (debug) {
-        console.log('autoApply ' + autoApply);
+    
+    this.readyExecuted = true;
+    
+    // Load css if not already 
+    if (!Sizzle('#fs-css-link', document.getElementsByTagName('head')[0]).length) {
+        linkCss();
     }
-    if (!autoApply) {
+    
+    if (!this.options.autoInject) {
         return;
     }
-    inject();
-
+    
+    this.inject();
 };
 
 /* routing */
-var completed = function () {
+FlexPrice.prototype.completed = function () {
+    
     if (debug) {
         console.log('completed');
     }
-    document.removeEventListener('DOMContentLoaded', completed, false);
-    window.removeEventListener('load', completed, false);
-    ready();
+    
+    document.removeEventListener('DOMContentLoaded', this.completedProxied, false);
+    window.removeEventListener('load', this.completedProxied, false);
+    
+    this.ready();
 };
 
 /* styling */
 var linkCss = function () {
+    
     var css = document.createElement('link');
+    
+    css.id = 'fs-css-link';
     css.type = 'text/css';
     css.rel='stylesheet';
     css.async = true;
     css.href = ('https:' == document.location.protocol ? 'https://cdn' : 'http://cdn') + '.flexshopper.com/widget.css';
+    
     if (debug) {
 //        css.href = 'http://plugin.flexshopper.dev/widget.css'; // debug
         css.href = 'http://weekly-payment-widget.flexshopper.dev/widget.css'; // debug
@@ -124,6 +150,3 @@ var linkCss = function () {
 
 
 this._FlexPrice = FlexPrice;
-
-document.addEventListener('DOMContentLoaded', completed, true);
-window.addEventListener('load', completed, true);

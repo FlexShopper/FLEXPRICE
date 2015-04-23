@@ -109,9 +109,7 @@
 	<!-- FlexPrice Plugin -->
         <script type="text/javascript" src="/flexshopper.js"></script>
         <script type="text/javascript">
-             var _FP = new _FlexPrice();
-             
-            _FP.load({
+             var _FP = new _FlexPrice({
                 productSelector: 'table.searchresult',
                 priceSelector: '.itemlistprice a',
                 targetSelector: 'table',

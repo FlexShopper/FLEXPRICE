@@ -1,16 +1,18 @@
 /* widget */
-var Widget = function () {
+var Widget = function (options) {
+    
     this.maxSpendLimit = 2500;
     this.minSpendLimit = 20;
     this.widgetIdPrefix = 'weekly-price-widget';
     this.popIdPrefix = 'fs-pop';
     this.baseHtml = '';
-    this.popupHtml = POPUP_HTML;
+    this.popupHtml = options.POPUP_HTML;
+    this.widgetHtml = options.WIDGET_HTML;
     this.html = '';
     this.uniqueString = '';
     this.widgetId = '';
     this.fsPopId = '';
-    this.size = 'auto';
+    this.size = options.size;
 };
 
 Widget.prototype.generateUniqueString = function () {
@@ -94,7 +96,7 @@ Widget.prototype.determineRecommendedSize = function (container) {
     return size;
 };
 
-Widget.prototype.init = function (container, size, priceSelector, targetSelector, inject) {
+Widget.prototype.init = function (container, priceSelector, targetSelector, inject) {
     
     var price, node, fragment, weeklyPrice, amountDisplay, size, self = this, priceContainer, targetContainer;
     
@@ -112,14 +114,15 @@ Widget.prototype.init = function (container, size, priceSelector, targetSelector
     }
     
     price = parseFloat(priceContainer.innerHTML.replace(/[^0-9.]/mg, ''));
-    if (price > this.maxSpendLimit || price < this.minSpendingLimit) {
+    
+    if (price > this.maxSpendLimit || price < this.minSpendLimit) {
         this.html = '';
         this.widgetId = '';
         return false;
     }
     
     // Set label html based on size
-    if (size === 'auto') {
+    if (this.size === 'auto') {
         
         if (!targetContainer) {
             return false;
@@ -128,7 +131,11 @@ Widget.prototype.init = function (container, size, priceSelector, targetSelector
         size = this.determineRecommendedSize(targetContainer);
     }
     
-    this.baseHtml = WIDGET_HTML[size];
+    // Otherwise just use default size
+    else {
+        size = this.size;
+    }
+    this.baseHtml = this.widgetHtml[size];
     
     this.generateUniqueString();
     this.widgetId = this.widgetIdPrefix + '-' + this.uniqueString;
@@ -151,7 +158,7 @@ Widget.prototype.init = function (container, size, priceSelector, targetSelector
         node.innerHTML += this.html;
         node.childNodes[(node.childNodes.length - 1)].addEventListener('click', function(){ self.configureAndshowPopup(); }), true;
         
-    // Otherwise prepare a fragment for retirn
+    // Otherwise prepare a fragment for return
     } else {
         fragment = document.createDocumentFragment();
     
@@ -173,6 +180,7 @@ Widget.prototype.init = function (container, size, priceSelector, targetSelector
     }
     
     weeklyPrice = formatMoney(Math.ceil((price * 2.02) / 52, 1));
+    
     amountDisplay[0].innerHTML = weeklyPrice;
 
     if (!inject) {
