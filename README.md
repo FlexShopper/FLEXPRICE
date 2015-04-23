@@ -5,7 +5,7 @@ JS for placement of FlexShopper weekly price on ecommerce stores implementing th
 ###Usage
 Place script in header and configure FlexPay Widget with options:
 ```
-    <script type="text/javascript" src="http://plugin.flexshopper.dev/flexshopper.js"></script>
+    <script type="text/javascript" src="/flexshopper.js"></script>
     <script type="application/javascript">
         var _FP = new _FlexPrice({
             productSelector: '.product',
@@ -26,7 +26,16 @@ Place script in header and configure FlexPay Widget with options:
 
 ###Configuration Examples:
 
-######Inject Example w size
+######Inject On Multiple Products
+```
+    new _FlexPrice({
+        productSelector: '.sub-category-items .row'
+        ,priceSelector: '.price'
+        ,size: 'MD'
+    });
+```    
+
+######Inject On Single Product w size
 ```
     <script type="application/javascript">
         var _FP = new _FlexPrice({
@@ -37,7 +46,7 @@ Place script in header and configure FlexPay Widget with options:
     </script>
 ```
 
-######Inject Example w custom price DOM selector (useful for product detail pages):
+######Custom injection target selector (useful for product detail pages):
 ```
     <script type="application/javascript">
         var _FP = new _FlexPrice({
@@ -48,7 +57,7 @@ Place script in header and configure FlexPay Widget with options:
     </script>
 ```
 
-######Inject Example w placeholder (useful for product detail pages):
+######Injection w placeholder:
 
 Step 1: Add Placeholder HTML
 ```
@@ -59,9 +68,9 @@ Step 2: Configure & Use Plugin
 ```
     <script type="application/javascript">
         var _FP = new _FlexPrice({
-            productSelector: '#product-main-content',
-            priceSelector: '#reg_price',
-            targetSelector: 'input.add-cart'
+            productSelector: '#some-container',
+            priceSelector: '.price',
+            targetSelector: '.fs-placeholder div'
         });
     </script>
 ```
