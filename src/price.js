@@ -1,4 +1,4 @@
-var FlexPrice, linkCss, debug = true;
+var FlexPrice, linkCss, debug = false;
 
 var WIDGET_HTML=[];
 /** WIDGET HTML **/
