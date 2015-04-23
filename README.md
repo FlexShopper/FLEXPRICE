@@ -28,11 +28,13 @@ Place script in header and configure FlexPay Widget with options:
 
 ######Inject On Multiple Products
 ```
+    <script type="application/javascript">
     new _FlexPrice({
         productSelector: '.sub-category-items .row'
         ,priceSelector: '.price'
         ,size: 'MD'
     });
+    </script>
 ```    
 
 ######Inject On Single Product w size
