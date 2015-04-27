@@ -1,2 +1,3 @@
-;(function(undefined){
-    "use strict";
+;(function () {
+    'use strict';
+
