@@ -1,0 +1,7 @@
+{
+	"preset": "yandex",
+	"disallowSpacesInFunctionDeclaration": null,
+	"disallowSpacesInNamedFunctionExpression": null,
+	"disallowSpacesInsideObjectBrackets": null,
+	"disallowMultipleLineBreaks": null
+}
