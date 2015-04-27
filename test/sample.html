@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FlexPrice Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script type="text/javascript" src="/flexshopper.js"></script>
+        <style type="text/css">
+            .wrapper { width: 600px; margin: 20px auto }
+            .test { height: 200px; padding: 20px; margin-bottom: 20px; background-color: whitesmoke }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>FlexPrice Test</h1>
+
+            <div id="test1" class="test">
+                <h2>Test 1</h2>
+                <div class="price">$1999.00</div>
+            </div>
+
+            <div id="test2"  class="test">
+                <h2>Test 2</h2>
+                <div class="price">$257.00</div>
+
+                <div>
+                    <button class="cart-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <div id="test3" class="test">
+                <h2>Test 3</h2>
+                <div class="price">$870</div>
+
+                <div>
+                    <div class="fs-placeholder"><div style="display: none"></div></div>
+                    <button class="cart-button">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div id="test4" class="test">
+                <h2>Test 4</h2>
+                <div class="price">$18</div>
+
+                <div>
+                    <button class="cart-button">Add to Cart</button>
+                    <div class="fs-placeholder"><div style="display: none"></div></div>
+                </div>
+            </div>
+            
+            <div id="test5" class="test">
+                <h2>Test 5</h2>
+                <div class="price">$3,200</div>
+
+                <div>
+                    <button class="cart-button">Add to Cart</button>
+                    <div class="fs-placeholder"><div style="display: none"></div></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        (function(){
+            
+            var test1 = new _FlexPrice({
+                productSelector: '#test1',
+                priceSelector: '.price',
+                size: 'MD'
+            });
+            
+            var test2 = new _FlexPrice({
+                productSelector: '#test2',
+                priceSelector: '.price',
+                targetSelector: '.cart-button',
+                size: 'SM'
+            });
+            
+            var test3 = new _FlexPrice({
+                productSelector: '#test3',
+                priceSelector: '.price',
+                targetSelector: '.fs-placeholder div',
+                size: 'XS'
+            });
+            
+            var test4 = new _FlexPrice({
+                productSelector: '#test4',
+                priceSelector: '.price',
+                targetSelector: '.fs-placeholder div',
+                size: 'MD'
+            });
+            
+            var test5 = new _FlexPrice({
+                productSelector: '#test5',
+                priceSelector: '.price',
+                targetSelector: '.fs-placeholder div',
+                size: 'MD'
+            });
+            
+        })();
+        </script>
+    </body>
+</html>

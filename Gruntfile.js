@@ -39,8 +39,8 @@ module.exports = function (grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    // grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify']);
-    grunt.registerTask('default', ['concat', 'insertWidgetHtml']);
+    grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify']);
+//    grunt.registerTask('default', ['concat', 'insertWidgetHtml']);
     grunt.registerMultiTask('insertWidgetHtml', 'Insert the widget HTML into the final JS', function () {
         var options = this.options({
             widgetHtmlLg: '',
