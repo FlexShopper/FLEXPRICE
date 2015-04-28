@@ -1,4 +1,4 @@
-#FlexPrice FlexShopper Weekly Payment Widget
+#Weekly Payment Widget
 
 JS for placement of FlexShopper weekly price on ecommerce stores implementing the FlexShopper plugin
 
