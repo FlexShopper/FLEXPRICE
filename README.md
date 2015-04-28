@@ -1,12 +1,10 @@
 #Weekly Payment Widget
 
-JS library for the placement of FlexShopper weekly price on ecommerce stores implementing the FlexShopper plugin.
-
-[Examples](http://rawgit.com/FlexShopper/FLEXPRICE/master/test/sample.html)
+JS for placement of FlexShopper weekly price on ecommerce stores implementing the FlexShopper plugin
 
 ###Usage
 Place script in header and configure FlexPay Widget with options:
-```
+``` js
     <script type="text/javascript" src="http://cdn.flexprice.com/flexprice.js"></script>
     <script type="application/javascript">
         var _FP = new _FlexPrice({
@@ -29,7 +27,7 @@ Place script in header and configure FlexPay Widget with options:
 ###Configuration Examples:
 
 ######Inject On Multiple Products
-```
+``` js
     <script type="application/javascript">
     new _FlexPrice({
         productSelector: '.sub-category-items .row'
@@ -40,7 +38,7 @@ Place script in header and configure FlexPay Widget with options:
 ```    
 
 ######Inject On Single Product w size
-```
+``` js
     <script type="application/javascript">
         var _FP = new _FlexPrice({
             size: 'SM' // 'auto', 'MD', 'SM', or 'XS'
@@ -51,7 +49,7 @@ Place script in header and configure FlexPay Widget with options:
 ```
 
 ######Custom injection target selector (useful for product detail pages):
-```
+``` js
     <script type="application/javascript">
         var _FP = new _FlexPrice({
             productSelector: '#product-main-content',
@@ -64,12 +62,12 @@ Place script in header and configure FlexPay Widget with options:
 ######Injection w placeholder:
 
 Step 1: Add Placeholder HTML
-```
+``` html
 <div class="fs-placeholder"><div style="display: none"></div></div>
 ```
 
 Step 2: Configure & Use Plugin
-```
+``` js
     <script type="application/javascript">
         var _FP = new _FlexPrice({
             productSelector: '#some-container',
