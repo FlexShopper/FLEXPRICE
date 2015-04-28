@@ -1,0 +1,5 @@
+{
+    "require": {
+        "maxcdn/php-maxcdn": "2.*"
+    } 
+}
