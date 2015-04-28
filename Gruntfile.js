@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                     'src/price.js',
                     'src/outro.js'
                 ],
-                dest: 'flexshopper.js'
+                dest: 'flexprice.js'
             }
         },
         insertWidgetHtml: {
@@ -21,25 +21,35 @@ module.exports = function (grunt) {
                 popupHtml: 'html/popup.html'
             },
             dist: {
-                src: 'flexshopper.js',
-                dest: 'flexshopper.js'
+                src: 'flexprice.js',
+                dest: 'flexprice.js'
             }
         },
         uglify: {
             dist: {
-                src: 'flexshopper.js',
-                dest: 'flexshopper.js'
+                src: 'flexprice.js',
+                dest: 'flexprice.js'
             },
             options: {
                 mangle: {
                     except: ['_FlexPrice']
                 }
             }
+        },
+        cssmin: {
+            target: {
+                files: [{
+                    src: ['src/flexprice.css'],
+                    dest: 'flexprice.css'      
+                }]
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify']);
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    
+    grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify', 'cssmin']);
 //    grunt.registerTask('default', ['concat', 'insertWidgetHtml']);
     grunt.registerMultiTask('insertWidgetHtml', 'Insert the widget HTML into the final JS', function () {
         var options = this.options({

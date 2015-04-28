@@ -33,7 +33,7 @@ FlexPrice.prototype.load = function (options) {
     this.options = {};
 
     // Set defaults
-    this.options.size = 'auto';
+    this.options.size = 'AUTO';
     this.options.autoInject = true;
 
     if (options.hasOwnProperty('productSelector')) {
@@ -144,11 +144,11 @@ var linkCss = function () {
     css.type = 'text/css';
     css.rel = 'stylesheet';
     css.async = true;
-    css.href = (document.location.protocol == 'https:' ? 'https://cdn' : 'http://cdn') + '.flexshopper.com/widget.css';
+    css.href = (document.location.protocol == 'https:' ? 'https://cdn' : 'http://cdn') + '.flexprice.com/v1/flexprice.css';
 
     if (debug) {
-        // css.href = 'http://plugin.flexshopper.dev/widget.css'; // debug
-        css.href = 'http://weekly-payment-widget.flexshopper.dev/widget.css'; // debug
+        // css.href = 'http://plugin.flexshopper.dev/flexprice.css'; // debug
+        css.href = 'http://weekly-payment-widget.flexshopper.dev/flexprice.css'; // debug
         console.log(css.href);
     }
 

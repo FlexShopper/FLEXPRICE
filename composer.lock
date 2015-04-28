@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "905a091b7b2c918459a04f4c5b7a3591",
+    "packages": [
+        {
+            "name": "maxcdn/php-maxcdn",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MaxCDN/php-maxcdn.git",
+                "reference": "a88c8ee41ca40c91b612cc87103a871bc640afc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MaxCDN/php-maxcdn/zipball/a88c8ee41ca40c91b612cc87103a871bc640afc9",
+                "reference": "a88c8ee41ca40c91b612cc87103a871bc640afc9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MaxCDN\\": "src/",
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Wrapper for MaxCDN Remote Web Services",
+            "homepage": "http://docs.maxcdn.com",
+            "time": "2014-07-11 00:04:09"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

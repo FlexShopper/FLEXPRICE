@@ -120,7 +120,7 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
     }
 
     // Set label html based on size
-    if (this.size === 'auto') {
+    if (this.size === 'AUTO') {
         if (!targetContainer) {
             return false;
         }
