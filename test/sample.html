@@ -7,90 +7,119 @@
         
         <script type="text/javascript" src="/flexshopper.js"></script>
         <style type="text/css">
+            body, html { font-family: sans-serif; }
             .wrapper { width: 600px; margin: 20px auto }
-            .test { height: 200px; padding: 20px; margin-bottom: 20px; background-color: whitesmoke }
+            .test { min-height: 200px; padding: 20px; margin-bottom: 20px; background-color: whitesmoke }
+            .test .price { text-align: right; padding: 10px }
+            .test .cart-button { }
+            .test .product { height: 120px; border-top: 2px dashed grey; padding-top: 10px }
         </style>
     </head>
     <body>
         <div class="wrapper">
             <h1>FlexPrice Test</h1>
+            <p>Github Link - <a href="https://github.com/FlexShopper/FLEXPRICE">https://github.com/FlexShopper/FLEXPRICE</a></p>
 
             <div id="test1" class="test">
-                <h2>Test 1</h2>
-                <div class="price">$1999.00</div>
+                <h2>Test 1 - Multiple Products</h2>
+                <p>Note: Products whose price exceeds our min or max price range do not receive the FlexPrice widget.</p>
+                <div class="product">
+                    <div class="name">Product A</div>
+                    <div class="price">$1999.00</div>
+                </div>
+                <div class="product">
+                    <div class="name">Product B</div>
+                    <div class="price">$242.00</div>
+                </div>
+                <div class="product">
+                    <div class="name">Product C (Below Min Price)</div>
+                    <div class="price">$13.99</div>
+                </div>
             </div>
 
-            <div id="test2"  class="test">
-                <h2>Test 2</h2>
-                <div class="price">$257.00</div>
-
-                <div>
-                    <button class="cart-button">Add to Cart</button>
+            <div id="test2" class="test">
+                <h2>Test 2 - Single Product</h2>
+                
+                <div class="product">
+                    <div class="name">Product A</div>
+                    <div class="price">$257.00</div>
+                    <div>
+                        <button class="cart-button">&plus; Add to Cart</button>
+                    </div>
                 </div>
             </div>
 
             <div id="test3" class="test">
-                <h2>Test 3</h2>
-                <div class="price">$870</div>
-
-                <div>
+                <h2>Test 3 - Single Product with Placeholder</h2>
+                <div class="product">
                     <div class="fs-placeholder"><div style="display: none"></div></div>
-                    <button class="cart-button">Add to Cart</button>
+                    <div class="name">Product A</div>
+                    <div class="price">$870</div>
+                    <div>
+                        <button class="cart-button">&plus; Add to Cart</button>
+                    </div>
                 </div>
             </div>
             
             <div id="test4" class="test">
-                <h2>Test 4</h2>
-                <div class="price">$18</div>
-
-                <div>
-                    <button class="cart-button">Add to Cart</button>
-                    <div class="fs-placeholder"><div style="display: none"></div></div>
+                <h2>Test 4 - Multiple Products with Placeholder</h2>
+                <p>Note: Products whose price exceeds our minimum and maximum price range do not receive the FlexPrice widget.</p>
+                
+                <div class="product">
+                    <div class="name">Product A</div>
+                    <div class="price">$1570.32</div>
+                    <div>
+                        <div class="fs-placeholder"><div style="display: none"></div></div>
+                        <button class="cart-button">&plus; Add to Cart</button>
+                    </div>
                 </div>
+               
+                <div class="product">
+                    <div class="name">Product B</div>
+                    <div class="price">$1232.95</div>
+                    <div>
+                        <div class="fs-placeholder"><div style="display: none"></div></div>
+                        <button class="cart-button">&plus; Add to Cart</button>
+                    </div>
+                </div>
+               
+                <div class="product">
+                    <div class="name">Product C (Above Max Price)</div>
+                    <div class="price">$3299.99</div>
+                    <div>
+                        <div class="fs-placeholder"><div style="display: none"></div></div>
+                        <button class="cart-button">&plus; Add to Cart</button>
+                    </div>
+                </div>
+                
             </div>
             
-            <div id="test5" class="test">
-                <h2>Test 5</h2>
-                <div class="price">$3,200</div>
-
-                <div>
-                    <button class="cart-button">Add to Cart</button>
-                    <div class="fs-placeholder"><div style="display: none"></div></div>
-                </div>
-            </div>
         </div>
         <script type="text/javascript">
         (function(){
             
             var test1 = new _FlexPrice({
-                productSelector: '#test1',
+                productSelector: '#test1 .product',
                 priceSelector: '.price',
                 size: 'MD'
             });
             
             var test2 = new _FlexPrice({
-                productSelector: '#test2',
+                productSelector: '#test2 .product',
                 priceSelector: '.price',
                 targetSelector: '.cart-button',
                 size: 'SM'
             });
             
             var test3 = new _FlexPrice({
-                productSelector: '#test3',
+                productSelector: '#test3 .product',
                 priceSelector: '.price',
                 targetSelector: '.fs-placeholder div',
                 size: 'XS'
             });
             
             var test4 = new _FlexPrice({
-                productSelector: '#test4',
-                priceSelector: '.price',
-                targetSelector: '.fs-placeholder div',
-                size: 'MD'
-            });
-            
-            var test5 = new _FlexPrice({
-                productSelector: '#test5',
+                productSelector: '#test4 .product',
                 priceSelector: '.price',
                 targetSelector: '.fs-placeholder div',
                 size: 'MD'
