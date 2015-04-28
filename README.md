@@ -5,7 +5,7 @@ JS for placement of FlexShopper weekly price on ecommerce stores implementing th
 ###Usage
 Place script in header and configure FlexPay Widget with options:
 ```
-    <script type="text/javascript" src="/flexshopper.js"></script>
+    <script type="text/javascript" src="http://cdn.flexprice.com/flexprice.js"></script>
     <script type="application/javascript">
         var _FP = new _FlexPrice({
             productSelector: '.product',
