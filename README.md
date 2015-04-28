@@ -1,6 +1,7 @@
 #Weekly Payment Widget
 
 JS for placement of FlexShopper weekly price on ecommerce stores implementing the FlexShopper plugin
+[Examples](http://rawgit.com/FlexShopper/FLEXPRICE/master/test/sample.html)
 
 ###Usage
 Place script in header and configure FlexPay Widget with options:
