@@ -21,7 +21,7 @@ Place script in header and configure FlexPay Widget with options:
 
 ######Optional:
 *   `targetSelector` - Selects the element which will be used as the target for insertion - widget is inserted as the last child of the target's parent, defaults to the "priceSelector" option
-*   `size` - Set the size of the plugin labels (XS,SM,MD, and auto), default auto
+*   `size` - Set the size of the plugin labels (XS,SM,MD, and AUTO), default AUTO
 *   `autoInject` - Automatically inject widget on page load.  If disabled, widget must be injected manually using inject() call.
 *   `debug` -  Enable debug mode, default false
 
