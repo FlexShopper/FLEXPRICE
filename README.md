@@ -25,6 +25,8 @@ Place script in header and configure FlexPay Widget with options:
 *   `autoInject` - Automatically inject widget on page load.  If disabled, widget must be injected manually using inject() call.
 *   `debug` -  Enable debug mode, default false
 
+Note: The **priceSelector** and **targetSelector** elements must be children of the **productSelector**.  If you are configuring a single product using the FlexPrice widget then the **productSelector** can be simply set to the body tag.
+
 ###Configuration Examples:
 
 ######Inject On Multiple Products
@@ -42,7 +44,7 @@ Place script in header and configure FlexPay Widget with options:
 ``` js
     <script type="application/javascript">
         var _FP = new _FlexPrice({
-            size: 'SM' // 'auto', 'MD', 'SM', or 'XS'
+            size: 'SM' // 'AUTO', 'MD', 'SM', or 'XS'
             productSelector: '#product-main-content',
             targetSelector: 'input.add-cart'
         });
