@@ -24,16 +24,16 @@ FlexPrice = function (options) {
 
     this.completedProxied = proxy(this.completed, self);
 
-    document.addEventListener('DOMContentLoaded', this.completedProxied);
+    document.addEventListener('DOMContentLoaded', this.completedProxied); //function i();
     window.addEventListener('load', this.completedProxied);
 };
 
 /* bus logic */
 FlexPrice.prototype.load = function (options) {
     this.options = {};
-
     // Set defaults
     this.options.size = 'AUTO';
+    this.options.productSelector = 'body';
     this.options.autoInject = true;
 
     if (options.hasOwnProperty('productSelector')) {
@@ -83,9 +83,15 @@ FlexPrice.prototype.inject = function () {
     var productContainers = Sizzle(this.options.productSelector);
     var containerLength = productContainers.length;
 
-    if (containerLength === 0) {
+    var targetContainers = Sizzle(this.options.targetSelector);
+
+    if(targetContainers.length === 0){
         return;
     }
+
+/*    if (containerLength === 0) {
+        return;
+    }*/
 
     for (var a = 0; a < containerLength; a++) {
         var widget = new Widget({
@@ -129,8 +135,8 @@ FlexPrice.prototype.completed = function () {
         console.log('completed');
     }
 
-    document.removeEventListener('DOMContentLoaded', this.completedProxied, false);
-    window.removeEventListener('load', this.completedProxied, false);
+    document.removeEventListener('DOMContentLoaded', this.completedProxied, false);     //there is no difference between removing this EventListener and not removing it,
+    window.removeEventListener('load', this.completedProxied, false);                   //because this.completedProxied(which is proxy(this.completed, self)) is just gonna fire once.
 
     this.ready();
 };
@@ -148,8 +154,8 @@ var linkCss = function () {
 
     if (debug) {
         // css.href = 'http://plugin.flexshopper.dev/flexprice.css'; // debug
-        css.href = 'http://weekly-payment-widget.flexshopper.dev/flexprice.css'; // debug
-        console.log(css.href);
+        //css.href = 'http://weekly-payment-widget.flexshopper.dev/flexprice.css'; // debug
+        css.href = 'file:///FlexShopper/FlexPrice/FLEXPRICE/v2/flexprice.css'; // debug
     }
 
     var s = document.getElementsByTagName('head')[0];
@@ -157,4 +163,5 @@ var linkCss = function () {
 };
 
 this._FlexPrice = FlexPrice;
+
 

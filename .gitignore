@@ -4,3 +4,7 @@ node_modules
 vendor/
 test/backup
 cdn.config.php
+.DS_Store
+src/.DS_Store
+v1/.DS_Store
+v2/.DS_Store

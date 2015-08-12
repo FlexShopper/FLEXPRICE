@@ -29,18 +29,19 @@
 .fs-badge-sm .fs-price .fs-price-label{font-size:10px;}
 
 .fs-badge-xs,.fs-badge-xs .icon-link{width:95px;}
-.fs-badge-xs{padding-left:6px;padding-right:6px;height:18px;}
+.fs-badge-xs{padding-left:6px;padding-right:6px;/*height:18px;*/}
 .fs-badge-xs .icon-q{top:6px;right:7px;font-size: 12px;width: 13px;height: 13px;}
 .fs-badge-xs .fs-price-img{padding-right:7px; display: none}
 .fs-badge-xs .fs-price{padding-left:3px;border-left:none;}
 .fs-badge-xs .fs-price .fs-price-label{font-size:10px;display:inline;}
 
-.fs-badge-txt,.fs-badge-txt .icon-link{width:136px;}
-.fs-badge-txt{padding-left:6px;padding-right:6px;}
+.fs-badge-txt,.fs-badge-txt .icon-link{width:100%;}
+/*.fs-badge-txt,.fs-badge-txt .icon-link{width:136px;}
+*/.fs-badge-txt{padding-left:6px;padding-right:6px;}
 .fs-badge-txt .icon-q{display:none;}
-.fs-badge-txt .fs-price-txt{font:bold 13px/1 arial;float:left;padding-right:6px;padding-top:6px;}
-.fs-badge-txt .fs-price{padding-left:8px;}
-.fs-badge-txt .fs-price .fs-price-label{font-size:10px;}
+/*.fs-badge-txt .fs-price-txt{font:bold 13px/1 arial;float:left;padding-right:6px;padding-top:6px;}*/
+.fs-badge-txt .fs-price{padding-left:4px;padding-right: 4px;border-left:0px;color: #000000;float: none; text-align: center;}
+.fs-badge-txt .fs-price .fs-price-label{display: inline-block;text-align: center;padding-top: 10px;}
 
 .fs-pop-wrap{background:#fff;border:5px solid #2279ed;color:#646464;font:13px/1.2 arial;width:680px;z-index:1000;position:absolute;top:10%;left:50%;margin-left:-340px}
 .fs-pop-wrap h2{color: #f68026;font: normal 20px/1.25 Arial, Helvetica,sans-serif;}
