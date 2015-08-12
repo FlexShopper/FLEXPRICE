@@ -1,6 +1,6 @@
 var FlexPrice;
 var linkCss;
-var debug = true;
+var debug = false;
 
 var WIDGET_HTML = [];
 /** WIDGET HTML **/
