@@ -88,8 +88,10 @@ Widget.prototype.determineRecommendedSize = function (container) {
         size = 'XS';
     } else if (container.offsetWidth < 200) {
         size = 'SM';
-    } else {
+    } else if (container.offsetWidth < 250){
         size = 'MD';
+    } else {
+        size = 'TXT';
     }
 
     return size;
@@ -131,13 +133,16 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
 
         size = this.size;
     }
-    this.baseHtml = this.widgetHtml[size];
 
-    this.generateUniqueString();
-    this.widgetId = this.widgetIdPrefix + '-' + this.uniqueString;
+    this.baseHtml = this.widgetHtml[size];//This is the whole html code from the widget-size.html
+    //console.log(this.baseHtml);
+
+    this.generateUniqueString();//generate UUID
+    this.widgetId = this.widgetIdPrefix + '-' + this.uniqueString; //this.widgetId is like "weekly-price-widget-799a5f6a1d00"
 
     // Update the widget id
     this.html = this.baseHtml.replace(new RegExp(this.widgetIdPrefix, 'g'), this.widgetId);
+    //console.log(this.html);
 
     // Make sure that we have a popup on the page
     if (!document.getElementById('fs-pop')) {
@@ -171,7 +176,8 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
     self.initOverlayAndPopup();
 
     // Update the display price
-    amountDisplay = Sizzle('#' + this.widgetId + ' .fs-price-amt', node);
+    amountDisplay = Sizzle('#' + this.widgetId + ' .fs-price-amt', node); //amountDisplay: [span.fs-price-amt]
+    //console.log(amountDisplay);
 
     if (amountDisplay.length === 0) {
         this.html = '';
@@ -179,9 +185,9 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
         return;
     }
 
-    weeklyPrice = formatMoney(Math.ceil((price * 2.02) / 52, 1));
+    weeklyPrice = formatMoney(Math.ceil((price * 2.02) / 52));
 
-    amountDisplay[0].innerHTML = weeklyPrice;
+    amountDisplay[0].innerHTML = weeklyPrice; //amountDisplay[0].innerHtml = $5
 
     if (!inject) {
         return fragment;

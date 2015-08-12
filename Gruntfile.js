@@ -1,5 +1,10 @@
 module.exports = function (grunt) {
+ /** grunt.registerTask('watch', [ 'watch' ]);**/
     grunt.initConfig({
+        clearn: {
+            'v2/flexprice.js'
+        },
+
         concat: {
             dist: {
                 src: [
@@ -10,7 +15,7 @@ module.exports = function (grunt) {
                     'src/price.js',
                     'src/outro.js'
                 ],
-                dest: 'flexprice.js'
+                dest: 'v2/flexprice.js'
             }
         },
         insertWidgetHtml: {
@@ -18,17 +23,18 @@ module.exports = function (grunt) {
                 widgetHtmlSm: 'html/widget-sm.html',
                 widgetHtmlMd: 'html/widget-md.html',
                 widgetHtmlXs: 'html/widget-xs.html',
+                widgetHtmlTxt: 'html/widget-txt.html',
                 popupHtml: 'html/popup.html'
             },
             dist: {
-                src: 'flexprice.js',
-                dest: 'flexprice.js'
+                src: 'v2/flexprice.js',
+                dest: 'v2/flexprice.js'
             }
         },
         uglify: {
             dist: {
-                src: 'flexprice.js',
-                dest: 'flexprice.js'
+                src: 'v2/flexprice.js',
+                dest: 'v2/flexprice.js'
             },
             options: {
                 mangle: {
@@ -40,22 +46,44 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     src: ['src/flexprice.css'],
-                    dest: 'flexprice.css'      
+                    dest: 'v2/flexprice.css'      
                 }]
             }
+        },
+
+        watch: {
+              js: {
+                files: ['src/price.js', 'src/widget.js'],
+                tasks: ['concat', 'insertWidgetHtml', 'uglify'],
+                options: {
+                    livereload: true,
+                },
+              },
+              css: {
+                files: ['src/flexprice.css'],
+                tasks: ['cssmin'],
+                options: {
+                    livereload: true,
+                },
+            }
         }
+
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
     
-    grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify', 'cssmin', 'watch']);
 //    grunt.registerTask('default', ['concat', 'insertWidgetHtml']);
     grunt.registerMultiTask('insertWidgetHtml', 'Insert the widget HTML into the final JS', function () {
         var options = this.options({
-            widgetHtmlLg: '',
+            widgetHtmlXs: '',
             widgetHtmlMd: '',
             widgetHtmlSm: '',
+            widgetHtmlTxt: '',
             popupHtml: ''
         });
         this.files.forEach(function (f) {
@@ -77,6 +105,7 @@ module.exports = function (grunt) {
             inlineJs(grunt.file.read(options.widgetHtmlXs), 'XS');
             inlineJs(grunt.file.read(options.widgetHtmlSm), 'SM');
             inlineJs(grunt.file.read(options.widgetHtmlMd), 'MD');
+            inlineJs(grunt.file.read(options.widgetHtmlTxt), 'TXT');
 
             var popupHtmlText = grunt.file.read(options.popupHtml);
 
