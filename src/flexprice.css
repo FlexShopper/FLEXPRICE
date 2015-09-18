@@ -16,7 +16,7 @@
 .fs-wkly-price .fs-price{float:left;border-left:1px solid #9fb6be;padding-left:10px;color:#f4862f;font:bold 18px/1 arial;}
 .fs-wkly-price .fs-price .fs-price-label{font-size:11px;font-weight:normal;display:block;}
 .fs-wkly-price .icon-q{position: absolute;font-weight: bold;font-family: arial;background-color: #2279ed;border: 1px solid #1665cf;border-radius: 20px;color: #fff;line-height: 1.2;text-align: center;top:11px;right:7px;font-size: 12px;width: 13px;height: 13px;}
-.fs-wkly-price .icon-link{display:block;color:#2279ed;font-size:11px; line-height: 10px; text-align:center;position:absolute;bottom:-18px;width:168px;}
+.fs-wkly-price .icon-link{display:block;color:#2279ed;font-size:11px; line-height: 10px; text-align:center;position:absolute;bottom:-18px;width:168px;font-family: arial;}
 .fs-wkly-price:hover .icon-link{text-decoration:underline;}
 
 .fs-badge-md,.fs-badge-md .icon-link{width:175px;}
