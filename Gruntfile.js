@@ -43,14 +43,23 @@ module.exports = function (grunt) {
                     dest: 'flexprice.css'      
                 }]
             }
+        },
+        watch: {
+            scripts: {
+                files: ['**/*.*'],
+                tasks: ['default'],
+                options: {
+                    spawn: false,
+                },
+            },
         }
     });
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    
+
     grunt.registerTask('default', ['concat', 'insertWidgetHtml', 'uglify', 'cssmin']);
-//    grunt.registerTask('default', ['concat', 'insertWidgetHtml']);
     grunt.registerMultiTask('insertWidgetHtml', 'Insert the widget HTML into the final JS', function () {
         var options = this.options({
             widgetHtmlLg: '',
