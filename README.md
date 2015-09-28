@@ -1,5 +1,7 @@
 #Weekly Payment Widget
 
+[![Join the chat at https://gitter.im/FlexShopper/FLEXPRICE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/FlexShopper/FLEXPRICE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 JS for placement of FlexShopper weekly price on ecommerce stores implementing the FlexShopper plugin
 [Examples](http://rawgit.com/FlexShopper/FLEXPRICE/master/test/sample.html)
 
