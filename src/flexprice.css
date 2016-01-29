@@ -123,6 +123,8 @@
 
 #fs-pop hr{clear: both;border: 0;border-top: 1px solid #d8dadd;margin:17px 0;}
 
+#fs-pop .lp-footnote { font-size: 12px; margin-top: 20px; }
+
 @media (max-width: 680px) {
     #fs-pop.fs-pop-wrap{width:92%;top:0;left:0;margin:10px;}
     #fs-pop .fs-pop-head .fs-pop-title{font-size:20px;}
