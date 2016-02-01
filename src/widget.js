@@ -179,9 +179,18 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
         return;
     }
 
-    weeklyPrice = formatMoney(Math.ceil((price * 2.02) / 52, 1));
+    var cashPrice = price + 50;
+    weeklyPrice = Math.ceil((price * 2.02) / 52, 1);
+    var totalPrice = weeklyPrice * 52;
+    var rentalFee = totalPrice - price;
 
-    amountDisplay[0].innerHTML = weeklyPrice;
+    amountDisplay[0].innerHTML = formatMoney(weeklyPrice);
+
+    // Popup legalese values
+    Sizzle('#fs-pop .top-footnote .weekly-price')[0].innerHTML = formatMoney(weeklyPrice);
+    Sizzle('#fs-pop .top-footnote .total-price')[0].innerHTML  = formatMoney(totalPrice);
+    Sizzle('#fs-pop .top-footnote .cash-price')[0].innerHTML   = formatMoney(cashPrice);
+    Sizzle('#fs-pop .top-footnote .rental-fee')[0].innerHTML   = formatMoney(rentalFee);
 
     if (!inject) {
         return fragment;
