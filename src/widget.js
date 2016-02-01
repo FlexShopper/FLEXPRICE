@@ -52,7 +52,8 @@ Widget.prototype.closePopupAndOverlay = function () {
     var overlay = document.getElementById('fs-pop-overlay');
     var popup = document.getElementById('fs-pop');
 
-    overlay.style.display = 'none';
+    // element does not exist in new popup
+    // overlay.style.display = 'none';
     popup.style.display = 'none';
 };
 
