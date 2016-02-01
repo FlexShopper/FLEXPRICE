@@ -44,7 +44,8 @@ Widget.prototype.initOverlayAndPopup = function () {
     popupClose.addEventListener('click', close);
 
     // hide overlay and popup on click
-    overlay.addEventListener('click', close);
+    // element does not exist in new popup
+    // overlay.addEventListener('click', close);
 };
 
 Widget.prototype.closePopupAndOverlay = function () {
