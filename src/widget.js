@@ -44,7 +44,8 @@ Widget.prototype.initOverlayAndPopup = function () {
     popupClose.addEventListener('click', close);
 
     // hide overlay and popup on click
-    overlay.addEventListener('click', close);
+    // element does not exist in new popup
+    // overlay.addEventListener('click', close);
 };
 
 Widget.prototype.closePopupAndOverlay = function () {
@@ -58,7 +59,8 @@ Widget.prototype.closePopupAndOverlay = function () {
 Widget.prototype.showOverlay = function () {
     var overlay = document.getElementById('fs-pop-overlay');
 
-    overlay.style.display = 'block';
+    // element does not exist in new popup
+    // overlay.style.display = 'block';
 };
 
 Widget.prototype.showPopup = function () {
