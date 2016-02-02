@@ -27,7 +27,8 @@
 .fs-badge-txt .fs-price { padding-left: 8px }
 .fs-badge-txt .fs-price .fs-price-label { font-size: 10px }
 #fs-pop { width: 680px; z-index: 1000; position: absolute; top: 10%; left: 50%; margin-left: -340px; }
-.fs-pop-wrap { background: #fff; border: 5px solid #2279ed; color: #646464; font-size: 13px; line-height: 1.2; font-family: arial !important; }
+.fs-pop-wrap { background: #fff; border: 5px solid #2279ed; color: #646464; font-size: 13px; line-height: 1.2; }
+.fs-pop-wrap * { font-family: arial; }
 .fs-pop-wrap h2 { color: #f68026; font: normal 20px/1.25 Arial, Helvetica,sans-serif; }
 .fs-pop-head { position: relative }
 .fs-pop-head .fs-pop-title { color: #3c3f44; text-align: center; margin: 20px 0; font: bold 36px/1 arial; }
