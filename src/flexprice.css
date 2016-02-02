@@ -27,7 +27,7 @@
 .fs-badge-txt .fs-price { padding-left: 8px }
 .fs-badge-txt .fs-price .fs-price-label { font-size: 10px }
 #fs-pop { width: 680px; z-index: 1000; position: absolute; top: 10%; left: 50%; margin-left: -340px; }
-.fs-pop-wrap { background: #fff; border: 5px solid #2279ed; color: #646464; font: 13px/1.2 arial; }
+.fs-pop-wrap { background: #fff; border: 5px solid #2279ed; color: #646464; font-size: 13px; line-height: 1.2; font-family: arial !important; }
 .fs-pop-wrap h2 { color: #f68026; font: normal 20px/1.25 Arial, Helvetica,sans-serif; }
 .fs-pop-head { position: relative }
 .fs-pop-head .fs-pop-title { color: #3c3f44; text-align: center; margin: 20px 0; font: bold 36px/1 arial; }
@@ -65,6 +65,7 @@
 .lp-highlight-bullets h3 { background: url(http://origin.flexshopper.com/media/wysiwyg/cms/icon-check-orange.png) 0 0 no-repeat; padding-left: 35px; min-height: 37px; margin: 0; font-size: 16px; font-weight: bold; margin-left: 5px; margin-top: 0; line-height: 1.5; }
 .lp-sec-faq { overflow: hidden; width: 100%; }
 .lp-sec-faq h4, .lp-faq-q { color: #3b3f44; font-size: 18px; font-weight: normal; margin-bottom: 5px; margin-top: 15px; }
+.lp-sec-faq ol { padding-left: 20px; }
 hr { clear: both; border: 0; border-top: 1px solid #d8dadd; margin: 17px 0; }
 .top-footnote { font-weight: bold; font-size: 14px; font-style: italic; font-family: arial; padding: 10px 5px; background-color: #fff; margin: 0; }
 @media (max-width: 680px) {
