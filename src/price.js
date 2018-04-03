@@ -148,7 +148,7 @@ var linkCss = function () {
 
     if (debug) {
         // css.href = 'http://plugin.flexshopper.dev/flexprice.css'; // debug
-        css.href = 'http://weekly-payment-widget.flexshopper.dev/flexprice.css'; // debug
+        css.href = 'https://weekly-payment-widget.flexshopper.dev/flexprice.css'; // debug
         console.log(css.href);
     }
 
