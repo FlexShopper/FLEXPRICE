@@ -189,12 +189,6 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
 
     amountDisplay[0].innerHTML = formatMoney(weeklyPrice);
 
-    // Popup legalese values
-    Sizzle('#fs-pop .top-footnote .weekly-price')[0].innerHTML = formatMoney(weeklyPrice);
-    Sizzle('#fs-pop .top-footnote .total-price')[0].innerHTML  = formatMoney(totalPrice);
-    Sizzle('#fs-pop .top-footnote .cash-price')[0].innerHTML   = formatMoney(cashPrice);
-    Sizzle('#fs-pop .top-footnote .rental-fee')[0].innerHTML   = formatMoney(rentalFee);
-
     if (!inject) {
         return fragment;
     }
