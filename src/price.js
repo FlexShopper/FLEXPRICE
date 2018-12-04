@@ -144,7 +144,7 @@ var linkCss = function () {
     css.type = 'text/css';
     css.rel = 'stylesheet';
     css.async = true;
-    css.href = (document.location.protocol == 'https:' ? 'https://images' : 'http://images') + '.flexprice.xyz/flexprice/v4/flexprice.css';
+    css.href = (document.location.protocol == 'https:' ? 'https://images' : 'http://images') + '.flexshopper.xyz/flexprice/v4/flexprice.css';
 
     if (debug) {
         // css.href = 'http://plugin.flexshopper.dev/flexprice.css'; // debug
