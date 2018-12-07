@@ -183,7 +183,7 @@ Widget.prototype.init = function (container, priceSelector, targetSelector, inje
     }
 
     var cashPrice = price + 50;
-    weeklyPrice = Math.ceil((price * 2.02) / 52, 1);
+    weeklyPrice = Math.ceil((price * 2.40) / 52, 1);
     var totalPrice = weeklyPrice * 52;
     var rentalFee = totalPrice - cashPrice;
 
