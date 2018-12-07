@@ -4,23 +4,19 @@
         <title>FlexPrice Test</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script type="text/javascript" src="https://cdn.flexprice.com/flexprice.js"></script>
-        <!--<script type="text/javascript" src="/flexprice.js"></script>-->
-        
+
+        <script type="text/javascript" src="https://images.flexshopper.xyz/flexprice/v4/flexprice.js"></script>
+
         <style type="text/css">
             body, html { font-family: sans-serif; }
             .wrapper { width: 600px; margin: 20px auto }
             .test { min-height: 200px; padding: 20px; margin-bottom: 20px; background-color: whitesmoke }
-            .test .product .price { text-align: right; padding: 10px; font-weight: bold }
+            .test .product .price { padding: 10px 0; font-weight: bold }
             .test .cart-button { }
             .test .product { height: 140px; border-top: 2px dashed grey; padding-top: 10px }
-            
+
             .test .product.inline { display: inline-block; float: left; width: 40%; border: 2px solid grey; padding: 10px; margin: 10px }
-            
-            
-            .test .product .name { text-align: right }
-            
+
             .subtle { color: rgb(134, 134, 134) }
             .clearfix { clear: both }
             pre { padding: 10px }
@@ -38,7 +34,7 @@
 var test1 = new _FlexPrice({
     productSelector: '#test1 .product',
     priceSelector: '.price',
-    size: 'MD'
+    size: 'SM'
 });</pre>
                 <div class="product inline">
                     <div class="name">Product A</div>
@@ -52,7 +48,7 @@ var test1 = new _FlexPrice({
                     <div class="name">Product C <div class="subtle">(Below Min Price)</div></div>
                     <div class="price">$13.99</div>
                 </div>
-                
+
                 <div class="clearfix"></div>
             </div>
 
@@ -63,31 +59,31 @@ var test2 = new _FlexPrice({
     productSelector: '#test2 .product',
     priceSelector: '.price',
     targetSelector: '.cart-button',
-    size: 'SM'
+    size: 'MD'
 });</pre>
-                
+
                 <div class="product">
-                    
+
                     <div class="name">Product A</div>
                     <div class="price">$257.00</div>
                     <div>
                         <button class="cart-button">&plus; Add to Cart</button>
                     </div>
                 </div>
-                
+
                 <div class="clearfix"></div>
             </div>
 
             <div id="test3" class="test">
                 <h2>Test 3 - Single Product with Placeholder</h2>
-                
+
 <pre>var test3 = new _FlexPrice({
     productSelector: '#test3 .product',
     priceSelector: '.price',
     targetSelector: '.fs-placeholder div',
     size: 'XS'
 });</pre>
-                
+
                 <div class="product">
                     <div class="fs-placeholder"><div style="display: none"></div></div>
                     <div class="name">Product A</div>
@@ -96,20 +92,20 @@ var test2 = new _FlexPrice({
                         <button class="cart-button">&plus; Add to Cart</button>
                     </div>
                 </div>
-                
+
                 <div class="clearfix"></div>
             </div>
-            
+
             <div id="test4" class="test">
                 <h2>Test 4 - Multiple Products with Placeholder</h2>
                 <p>Note: Products whose price exceeds our minimum and maximum price range do not receive the FlexPrice widget.</p>
-                
+
                 <pre>
 var test4 = new _FlexPrice({
     productSelector: '#test4 .product',
     priceSelector: '.price',
     targetSelector: '.fs-placeholder div',
-    size: 'MD'
+    size: 'XS'
 });</pre>
                 <div class="product inline">
                     <div class="name">Product A</div>
@@ -119,7 +115,7 @@ var test4 = new _FlexPrice({
                         <button class="cart-button">&plus; Add to Cart</button>
                     </div>
                 </div>
-               
+
                 <div class="product inline">
                     <div class="name">Product B</div>
                     <div class="price">$1232.95</div>
@@ -128,7 +124,7 @@ var test4 = new _FlexPrice({
                         <button class="cart-button">&plus; Add to Cart</button>
                     </div>
                 </div>
-               
+
                 <div class="product inline">
                     <div class="name">Product C <div class="subtle">(Above Max Price)</div></div>
                     <div class="price">$3299.99</div>
@@ -137,41 +133,41 @@ var test4 = new _FlexPrice({
                         <button class="cart-button">&plus; Add to Cart</button>
                     </div>
                 </div>
-                
+
                 <div class="clearfix"></div>
             </div>
-            
+
         </div>
         <script type="text/javascript">
         (function(){
-            
+
             var test1 = new _FlexPrice({
                 productSelector: '#test1 .product',
                 priceSelector: '.price',
-                size: 'MD'
+                size: 'SM'
             });
-            
+
             var test2 = new _FlexPrice({
                 productSelector: '#test2 .product',
                 priceSelector: '.price',
                 targetSelector: '.cart-button',
-                size: 'SM'
+                size: 'MD'
             });
-            
+
             var test3 = new _FlexPrice({
                 productSelector: '#test3 .product',
                 priceSelector: '.price',
                 targetSelector: '.fs-placeholder div',
                 size: 'XS'
             });
-            
+
             var test4 = new _FlexPrice({
                 productSelector: '#test4 .product',
                 priceSelector: '.price',
                 targetSelector: '.fs-placeholder div',
-                size: 'MD'
+                size: 'XS'
             });
-            
+
         })();
         </script>
     </body>
