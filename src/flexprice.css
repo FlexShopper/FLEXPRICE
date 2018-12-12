@@ -100,13 +100,15 @@
 .fs-pop-wrap h2 img {
     vertical-align: middle;
 }
-.fs-pop-wrap h3 {
+.fs-pop-wrap .fs-pop-title-sm {
     color: #3c3f44;
     font: 600 18px/1.25 Arial, Helvetica, sans-serif;
 }
-.fs-pop-wrap sup {
+.fs-pop-wrap .fs-pop-subtitle sup {
     vertical-align: top;
     font-size: .6em;
+    top: 0;
+    line-height: inherit;
 }
 .fs-pop-head {
     text-align: center;
@@ -131,9 +133,10 @@
     text-decoration: none;
     font-weight: 700;
     line-height: 0;
+    cursor: pointer;
 }
 .fs-pop-header {
-    padding: 10px 0;
+    padding: 10px 0 30px 0;
     text-align: center;
 }
 .fs-pop-header .fs-logo {
