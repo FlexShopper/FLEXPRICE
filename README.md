@@ -40,7 +40,7 @@ Note: The **priceSelector** and **targetSelector** elements must be children of 
     </script>
 ```    
 
-###### Inject On Single Product w size
+###### Inject On Single Product with size
 ``` js
     <script type="application/javascript">
         var _FP = new _FlexPrice({
@@ -62,7 +62,7 @@ Note: The **priceSelector** and **targetSelector** elements must be children of 
     </script>
 ```
 
-###### Injection w placeholder:
+###### Injection with placeholder:
 
 Step 1: Add Placeholder HTML
 ``` html
